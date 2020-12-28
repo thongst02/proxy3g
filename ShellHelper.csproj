@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+  <ApplicationIcon />
+  <OutputType>Exe</OutputType>
+  <StartupObject />
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="WebStore\app.js" />
+    <None Remove="WebStore\favicon.ico" />
+    <None Remove="WebStore\home.html" />
+    <None Remove="WebStore\index.html" />
+    <None Remove="WebStore\jquery.min.js" />
+    <None Remove="WebStore\logo_default%402x.png" />
+    <None Remove="WebStore\logo_default.png" />
+    <None Remove="WebStore\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="WebStore\app.js" />
+    <EmbeddedResource Include="WebStore\favicon.ico" />
+    <EmbeddedResource Include="WebStore\home.html" />
+    <EmbeddedResource Include="WebStore\index.html" />
+    <EmbeddedResource Include="WebStore\jquery.min.js" />
+    <EmbeddedResource Include="WebStore\logo_default.png" />
+    <EmbeddedResource Include="WebStore\logo_default@2x.png" />
+    <EmbeddedResource Include="WebStore\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.IO.Ports" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>

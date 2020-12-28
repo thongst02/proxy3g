@@ -1,0 +1,49 @@
+
+<div class="box box-danger">
+	<div class="box-body" style="min-height: 0px;" id="box-request-body">
+   <div id="table-request_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+      <div class="row">
+         <div class="col-sm-12">
+            <table id="table-request" class="table table-bordered table-hover table-list-request dataTable no-footer" role="grid" aria-describedby="table-request_info">
+               <thead>
+                  <tr role="row">
+                     <th class="sorting_disabled" rowspan="1" colspan="1">Device</th>
+                     <th class="sorting_disabled" rowspan="1" colspan="1">Serial</th>
+                     <th class="sorting_disabled" rowspan="1" colspan="1">Operator</th>                     
+					 <th class="sorting_disabled" rowspan="1" colspan="1">Signal</th>
+                     <th class="sorting_disabled" rowspan="1" colspan="1">Time</th>
+                     <th class="sorting_disabled" rowspan="1" colspan="1">IP</th>
+                     <th class="sorting_disabled" rowspan="1" colspan="1">Proxy</th>
+                     <th class="sorting_disabled" rowspan="1" colspan="1">Status</th>					                      
+                     <th style="width: 70px" class="sorting_disabled" rowspan="1" colspan="1"></th>					 
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr role="row" class="odd" ng-repeat="m in ms">
+                     <td>{{m.gsmInfo.model}}</td>
+                     <td><span style="cursor: pointer" ng-click="copyToClipboard(m.gsmInfo.serial_number)">{{m.gsmInfo.serial_number}}</span></td> 
+                     <td>{{m.gsmInfo.operation_name}}</td>                     
+                     <td>{{m.gsmInfo.signal}}</td>
+                     <td><span class='label label-success'>{{m.timer}}</span></td>
+                     <td><span class="label label-success" ng-click="copyToClipboard(m.ip_address)">{{m.ip_address}}</span></td>                     
+                     <td><span style="cursor: pointer" ng-click="copyToClipboard(m.proxy_address)">{{m.proxy_address}}</span></td>
+                     <td>{{m.state}}</td>
+                     <td><a class="btn btn-success btn-xs" ng-click="reset(m.device_id)"><i class="fa fa-refresh"></i> Reset</a>
+					 <a class="btn btn-danger btn-xs" ng-click="stop(m.device_id)"> Stop</a></td>
+                  </tr>
+                  
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-5"></div>
+      </div>
+   </div>
+</div>
+		
+		
+						<div class="overlay" id="table-loading" style="display: none;">
+							<i class="fa fa-spinner fa-spin"></i>
+						</div>
+</div>
